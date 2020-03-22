@@ -8,6 +8,10 @@ setTimeout(() => {
     req.onsuccess = function(event) {
         // Do something with the request.result!
         clearRestaurants();
+
+        // var card = document.getElementById('cardRestaurant').cloneNode(true);
+        // card.innerHTML = "";
+        // secFood.appendChild(card);
         
         req.result.forEach(function(item){
             // var data = JSON.parse(item);

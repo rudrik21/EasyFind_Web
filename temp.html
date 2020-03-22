@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Easy Find Restaurent</title>
+    <title id="title"></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,89 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
     <link rel="stylesheet" href="styles/style.css">
-        <style>
-          .mySlides {display:none}
-          .w3-left, .w3-right, .w3-badge {cursor:pointer}
-          .w3-badge {height:13px;width:13px;padding:0}
-          #map {
-            height: 400px;
-            width: 50%;
-            margin-right:2.5em;
-            background-color: #c2e858;
-           }
-
-           rating {
-     display: flex;
-     align-items: center;
-     font-size: 4rem;
-     margin-bottom: 0.5rem;
-   }
-
-   .rating__stars {
-     display: inline;
-   }
-
-   .rating__score {
-     padding-right: 0.75rem;
-   }
-
-   .stars-outer {
-     font-size: 3em;
-     display: inline-block;
-     position: relative;
-     font-family: FontAwesome;
-   }
-
-   .stars-outer::before {
-     content: "\f005   \f005   \f005   \f005   \f005";
-     color: #F9DBA6;
-   }
-
-   .stars-inner {
-     font-size: 3em;
-     position: absolute;
-     top: 0;
-     left: 0;
-     white-space: nowrap;
-     overflow: hidden;
-     width: 0;
-   }
-
-   .stars-inner::before {
-     content: "\f005 \f005 \f005 \f005 \f005";
-     color: #F5A623;
-     height:45px;
-   }
-</style>
 </head>
 
 <body style="background:rgba(black, 0.5)">
 
-  <!-- Sidebar (hidden by default) -->
-  <div id="mySidenav" class="sidenav" onclick="closeNav()">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
-    <a href="fav.html">Favourite</a>
-    <a href="aboutus.html">About</a>
-    <a href="ourteam.html">Our Team</a>
-    <a href="contactus.html">Contact Us</a>
-  </div>
-
+ <!-- Sidebar (hidden by default) -->
+ <div id="mySidenav" class="sidenav" onclick="closeNav()">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+  <a href="favourites.html">Favourite</a>
+  <a href="aboutus.html">About</a>
+  <a href="ourteam.html">Our Team</a>
+  <a href="contactus.html">Contact Us</a>
+</div>
 
 <!-- image sources-->
-<div class="w3-content w3-display-container" style="max-width:83%">
-  <h1>hi</h1>
-  <img class="mySlides" src="images/sandwich.jpg" style="width:100%">
-    <img class="mySlides" src="cherries.jpg" style="width:100%">
-  <img class="mySlides" src="images/steak.jpg" style="width:100%">
-  <img class="mySlides" src="images/cherries.jpg" style="width:100%">
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+<div id="slider" class="w3-content w3-display-container" style="max-width:83%">
+  <div class="hidden">
+    <img id="imgSlider" class="mySlides" src="images/sandwich.jpg" style="width:100%">
+
+    <span id="sliderDot" class="w3-badge demo w3-border w3-transparent w3-hover-white""></span>
+
+  </div>
+
+  <div id="sliderDots" class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
     <!-- for dot onside of the images-->
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <!-- <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span> -->
   </div>
 </div>
 
@@ -101,50 +48,49 @@
     <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
       <div id="navIcon" class="w3-button w3-padding-16 w3-left w3-black" onclick="toggleNav()">☰</div>
       <div id="navIcon" class="w3-right w3-padding-16 w3-black" style="margin-right:0.5em;margin-bottom:0.5em;"><a href="index.html"><i class="w3-xlarge fa fa-home"></a></i></div>
-      <div class="w3-center w3-padding-16 w3-black"><a href = "index.html">My Food<a></div>
+      <div id="txtTitle" class="w3-center w3-padding-16 w3-black">My Food</div>
     </div>
   </div>
-
 
   <!-- About Section -->
   <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
   <div class="w3-row w3-padding-16" id="about">
-
-
 
       <div class="w3-col m6 w3-padding-large">
         <h1 class="w3-center">About Location & Hours</h1><br>
         <div class="w3-col m6 w3-padding-large w3-hide-small" id="map">
 
         </div>
-        <p class="w3-large w3-text-grey w3-hide-medium" id="time">
-          Monday    : Closed<br>
+        <p id="time" class="w3-large w3-text-grey w3-hide-medium">
+
+          <!-- Monday    : Closed<br>
           Tuesday   : 5:00  - 10:00 <br>
           Wednesday : 5:00  - 10:00 <br>
           Thursday  : 5:00  - 10:00<br>
           Friday    : 5:00  - 10:00 <br>
-          Saturday  : 5:00 </p>
+          Saturday  : 5:00 </p> -->
       </div>
 
       <div class="w3-col m6 w3-padding-large">
-        <h1 class="w3-center">About Restaurent</h1><br>
-        <h5 class="w3-center" id="rating">Rationg out of 5</h5>
-        <div class="rating">
-  <div class="rating__stars">
-    <div class="stars-outer">
-      <div id="star" class="star stars-inner" data-rating="2.7"></div>
-    </div>
-  </div>
-</div>
-          <h5 class="w3-center" id="about">Tradition since 1889</h5>
-        <p class="w3-large" id="review">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
+        <h1 id="restName" class="w3-center">About Restaurent</h1><br>
+        <h4 id="rating">&#127775 Rating : </h4>
+        <div class="hidden rating">
+          <div class="rating__stars">
+            <div class="stars-outer">
+              <div id="star" class="star stars-inner" data-rating="4"></div>
+            </div>
+          </div>
+        </div>
+      
+      <h5 id="about" class="hidden">About</h5>
+        <p class="hidden w3-large" id="review">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
 
-        <p class="w3-large w3-text-grey w3-hide-medium" id="details">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="hidden w3-large w3-text-grey w3-hide-medium" id="details">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
 
 
     <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
+    <footer class="hidden w3-row-padding w3-padding-32">
       <hr>
       <div class="w3-third">
         <h3>FOOTER</h3>
@@ -188,40 +134,14 @@
 
 <!-- SCRIPTS -->
 
-<script>
-// Initialize and add the map
-function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        infoWindow = new google.maps.InfoWindow;
+<script src = "scripts/commons.js" type="text/javascript"></script>
+<script src="scripts/api.js" type="text/javascript"></script>
+<script src="scripts/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
+<script src="scripts/utils.js" type="text/javascript"></script>
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-</script>
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfnWRhcBo15hdyMyn8XZvVLuaHSenTt3w&callback=initMap">
- initMap();
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfnWRhcBo15hdyMyn8XZvVLuaHSenTt3w">
+//  initMap();
 
  //js of rating rating__stars
  // Get all stars with class of star and turn it into an array
@@ -247,8 +167,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfnWRhcBo15hdyMyn8XZvVLua
 
 </script>
 
-<script src = "scripts/commons.js" type="text/javascript"></script>
-<script src="scripts/api.js" type="text/javascript"></script>
-<script src="scripts/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
-<script src="scripts/utils.js" type="text/javascript"></script>
+<script src = "scripts/temp.js" type="text/javascript"></script>
+
 </html>

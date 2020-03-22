@@ -131,6 +131,8 @@ var getHTML = function ( url, callback ) {
 
 const TAG = 'commons.js: ';
 var addRestaurantCard = function(d, parent, data, isFav){  
+  setTimeout(() => {
+  
     var card = d.getElementById('cardRestaurant').cloneNode(true);
     var rImage = d.getElementById('rImage');
     var rName = d.getElementById('rName');
@@ -160,9 +162,13 @@ var addRestaurantCard = function(d, parent, data, isFav){
 
 
     console.log('RNAME: ', data.alias);
+
+    // parent.innerHTML += card.innerHTML;
     parent.appendChild(card);
   
     clearRepeating(parent);
+
+  }, 100);
 }
 
 function clearRepeating(secFood){
@@ -177,4 +183,14 @@ function clearRepeating(secFood){
     }
   });
 }
+}
+
+
+//  onRestaurantClick()
+
+function onRestaurantClick(card){
+  var data = card.querySelector('#heart').getAttribute('data');
+  var url = window.location.href;
+  const filterUrl = url.slice(0,url.lastIndexOf("/")) + '/temp.html';
+  window.open(filterUrl + '?json=' + encodeURI(data));
 }

@@ -157,3 +157,59 @@ body {
 #pageCurrent{
   margin: 0 2em;
 }
+
+
+/* SLIDER STYLES */
+
+.mySlides {display:none}
+      .w3-left, .w3-right, .w3-badge {cursor:pointer}
+      .w3-badge {height:13px;width:13px;padding:0}
+      #map {
+        height: 400px;
+        width: 50%;
+        margin-right:2.5em;
+        background-color: #c2e858;
+        }
+
+        rating {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating__stars {
+  display: inline;
+}
+
+.rating__score {
+  padding-right: 0.75rem;
+}
+
+.stars-outer {
+  font-size: 3em;
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\f005   \f005   \f005   \f005   \f005";
+  color: #F9DBA6;
+}
+
+.stars-inner {
+  font-size: 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #F5A623;
+  height:45px;
+}
