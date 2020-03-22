@@ -1,100 +1,56 @@
 <!DOCTYPE html>
+
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-.mySlides {
-  display:none;
-  height:40em;
-}
-a{
-  text-decoration: none;
-}
-body {
+<head>
+    <title>Easy Find Restaurent</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
 
-  font-family: "Lato", sans-serif;
-}
-.checked {
-  color: orange;
-}
+    <link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
+</head>
+<style media="screen">
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+#heart.red {
+  color: red;
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 </style>
-
-
 <body style="background:rgba(black, 0.5)">
 
   <!-- Sidebar (hidden by default) -->
   <div id="mySidenav" class="sidenav" onclick="closeNav()">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <a href="favourites.html">Favourite</a>
+    <a href="aboutus.html">About</a>
+    <a href="ourteam.html">Our Team</a>
+    <a href="contactus.html">Contact Us</a>
   </div>
 
 
-  <div class="w3-content w3-section" style="max-width:80%;">
-    <img class="mySlides" src="images/sandwich.jpg" style="width:100%"><div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
-      Mountains!
-    </div>
+  <div class="w3-content w3-section" style="max-width:83%;">
+    <h1>
+      hi</h1>
+    <img class="mySlides" src="images/sandwich.jpg" style="width:100%">
     <img class="mySlides" src="images/steak.jpg" style="width:100%">
     <img class="mySlides" src="images/cherries.jpg" style="width:100%">
   </div>
-
+  <div class="wrapper">
+    <input id="txtSearch" type="text" class="input"
+    placeholder="What are you looking for?">
+    <!-- <i class='fa fa-crosshairs' style='font-size:36px;margin:5px;color:white;'></i> -->
+    <div class="searchbtn" onclick="onSearchRestaurant()"><i  class="fa fa-search" style="padding:1.5em 2.3em; align-self: center;"></i></div>
+  </div>
+  </div>
   <!-- Top menu -->
   <div class="w3-top">
     <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
       <div id="navIcon" class="w3-button w3-padding-16 w3-left w3-black" onclick="toggleNav()">☰</div>
-      <div class="w3-center w3-padding-16 w3-black"><a href = "index.html">My Food<a></div>
+      <div id="navIcon" class="w3-right w3-padding-16 w3-black" style="margin-right:0.5em;margin-bottom:0.5em;"><a href="index.html"><i class="w3-xlarge fa fa-home"></a></i></div>
+      <div id="txtTitle" class="w3-center w3-padding-16 w3-black">My Food</div>
     </div>
   </div>
 
@@ -102,20 +58,15 @@ body {
   <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
     <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-      <div class="w3-quarter">
-        <img src="images/sandwich.jpg" alt="Sandwich" style="width:75%;">
-        <h3 id="resturentName">The Perfect Sandwich, A Real NYC Classic</h3>
-        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-      </div>
+    <div id="food" class="w3-row-padding w3-padding-16 w3-center">
+
+    </div>
+    
+<!-- 
       <div class="w3-quarter">
         <img src="images/steak.jpg" alt="Steak" style="width:100%">
         <h3>Let Me Tell You About This Steak</h3>
+        <i class='fa fa-heart' onclick="addtoFav(this)" id="heart" style='font-size:36px' onclick="addtoFav()"></i>
         <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -126,8 +77,8 @@ body {
       <div class="w3-quarter">
         <img src="images/cherries.jpg" alt="Cherries" style="width:100%">
         <h3>Cherries, interrupted</h3>
+        <i class='fa fa-heart' onclick="addtoFav(this)" id="heart" style='font-size:36px' onclick="addtoFav()"></i>
         <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        <p>What else?</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -137,6 +88,7 @@ body {
       <div class="w3-quarter">
         <img src="images/wine.jpg" alt="Pasta and Wine" style="width:100%">
         <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+        <i class='fa fa-heart' onclick="addtoFav(this)" id="heart" style='font-size:36px' onclick="addtoFav()"></i>
         <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -145,8 +97,11 @@ body {
         <span class="fa fa-star"></span>
       </div>
     </div>
+ -->
+
 
     <!-- Second Photo Grid-->
+<!--     
     <div class="w3-row-padding w3-padding-16 w3-center">
       <div class="w3-quarter">
         <img src="images/popsicle.jpg" alt="Popsicle" style="width:100%">
@@ -169,34 +124,26 @@ body {
         <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
       </div>
     </div>
+ -->
+
+    <!-- Footer -->
+    <footer class="w3-row-padding w3-padding-32">
+
+
     <!-- Pagination -->
     <div class="w3-center w3-padding-32">
       <div class="w3-bar">
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a id="pageBACK" href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a id="pageCurrent" href="#" class="w3-bar-item w3-button">1</a>
+        <!-- <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
         <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a> -->
+        <a id="pageNEXT" href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
       </div>
     </div>
 
     <hr id="about">
 
-    <!-- About Section -->
-    <div class="w3-container w3-padding-32 w3-center">
-      <h3>About Me, The Food Man</h3><br>
-      <img src="images/chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
-      <div class="w3-padding-32">
-        <h4><b>I am Who I Am!</b></h4>
-        <h6><i>With Passion For Real, Good Food</i></h6>
-        <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-    <hr>
-
-    <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
       <div class="w3-third">
         <h3>FOOTER</h3>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
@@ -208,25 +155,25 @@ body {
         <ul class="w3-ul w3-hoverable">
           <li class="w3-padding-16">
             <img src="images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Lorem</span><br>
-            <span>Sed mattis nunc</span>
+            <span class="w3-large">Fresh</span><br>
+            <span>Get your Food</span>
           </li>
           <li class="w3-padding-16">
             <img src="images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Ipsum</span><br>
-            <span>Praes tinci sed</span>
+            <span class="w3-large">Healthy</span><br>
+            <span>All time freash</span>
           </li>
         </ul>
       </div>
 
       <div class="w3-third w3-serif">
-        <h3>POPULAR TAGS</h3>
+        <h3>POPULAR TAGS heading</h3>
         <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+          <div class="wrapper1">
+              <a href="http://www.google.com"><i class="fa fa-3x fa-google-plus"></i></a>
+              <a href="http://www.facebook.com"><i class="fa fa-3x fa-facebook-square"></i></a>
+              <a href="http://www.twitter.com"><i class="fa fa-3x fa-twitter-square"></i></a>
+            </div>
         </p>
       </div>
     </footer>
@@ -234,51 +181,26 @@ body {
     <!-- End page content -->
   </div>
 
-  <script>
-
-  var myIndex = 0;
-  carousel();
-  var nav = document.getElementById("mySidenav");
-  var isNavOpen = false;
-
-
-  function toggleNav(){
-    if (!isNavOpen){
-      openNav();
-    }else{
-      closeNav();
-    }
-  }
-
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 5000); // Change image every 2 seconds
-  }
-
-
-  function openNav() {
-    isNavOpen = true;
-    navIcon.innerHTML = "x";
-    nav.style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-
-  }
-
-  function closeNav() {
-    isNavOpen = false;
-    navIcon.innerHTML = "☰";
-    nav.style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
-
-</script>
-
+  <div class="hidden">
+    <div id="cardRestaurant" class="w3-quarter">
+      <img id="rImage" src="images/sandwich.jpg" alt="Sandwich" style="width:100%;">
+      <h3 id="rName" class="max-lines">Sample</h3>
+      <i id="heart" class='fa fa-heart' onclick="toggleFav(this)" style='font-size:36px'"></i>
+      <p id="rAddr" class="max-lines"></p>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+  </div>
 </body>
+
+<!-- SCRIPTS -->
+<script src="scripts/db.js" type="text/javascript"></script>
+<script src="scripts/api.js" type="text/javascript"></script>
+<script src = "scripts/commons.js" type="text/javascript"></script>
+<script src="scripts/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
+<script src="scripts/utils.js" type="text/javascript"></script>
+<script src = "scripts/home.js" type="text/javascript"></script>
 </html>
